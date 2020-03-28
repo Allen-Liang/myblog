@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>google material design | 卖假货的学长</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Google质感设计杂谈" />
+  
+  
+  
+  
+  <meta name="description" content="好几年之前有在Google I/O 大会相关的视频中看到过material design这个东西，今天又在YouTube中看到了，就重新看了一些，找了一些Google官方的文档尝试去简单了解一下。似乎国内很多很多的厂商的app不那么喜欢MD的设计风格，具体的原因还有待去仔细研究，这里不做优劣评述，仅仅简单了解一下。">
+<meta name="keywords" content="Google,质感设计,杂谈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Material Design">
+<meta property="og:url" content="http://www.liantianhua.com/myblog/2020/03/26/Google Material Design/index.html">
+<meta property="og:site_name" content="卖假货的学长">
+<meta property="og:description" content="好几年之前有在Google I/O 大会相关的视频中看到过material design这个东西，今天又在YouTube中看到了，就重新看了一些，找了一些Google官方的文档尝试去简单了解一下。似乎国内很多很多的厂商的app不那么喜欢MD的设计风格，具体的原因还有待去仔细研究，这里不做优劣评述，仅仅简单了解一下。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/03/26/Google%20Material%20Design/Android-app.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/03/26/Google%20Material%20Design/Google-app.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/03/26/Google%20Material%20Design/flutter.png">
+<meta property="og:updated_time" content="2020-03-28T07:40:48.015Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Google Material Design">
+<meta name="twitter:description" content="好几年之前有在Google I/O 大会相关的视频中看到过material design这个东西，今天又在YouTube中看到了，就重新看了一些，找了一些Google官方的文档尝试去简单了解一下。似乎国内很多很多的厂商的app不那么喜欢MD的设计风格，具体的原因还有待去仔细研究，这里不做优劣评述，仅仅简单了解一下。">
+<meta name="twitter:image" content="http://www.liantianhua.com/myblog/2020/03/26/Google%20Material%20Design/Android-app.png">
+  
+    <link rel="alternate" href="/atom.xml" title="卖假货的学长" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/myblog/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/myblog/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/myblog/css/style.css">
+
+  <script src="/myblog/js/jquery-3.1.1.min.js"></script>
+  <script src="/myblog/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/myblog/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/myblog/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/myblog/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/myblog/css/vdonate.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/myblog/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/myblog/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/myblog/',
+        CONTENT_URL: '/myblog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/myblog/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Google Material Design" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Google Material Design
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/myblog/2020/03/26/Google Material Design/" class="article-date">
+	  <time datetime="2020-03-26T15:30:35.000Z" itemprop="datePublished">2020-03-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/myblog/categories/Material-Design/">Material Design</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>好几年之前有在Google I/O 大会相关的视频中看到过material design这个东西，今天又在YouTube中看到了，就重新看了一些，找了一些Google官方的文档尝试去简单了解一下。似乎国内很多很多的厂商的app不那么喜欢MD的设计风格，具体的原因还有待去仔细研究，这里不做优劣评述，仅仅简单了解一下。<br><img src="/myblog/2020/03/26/Google%20Material%20Design/Android-app.png" alt="Android-app.png" title=""></p>
+<a id="more"></a>
+<h1 id="Google原生全家桶"><a href="#Google原生全家桶" class="headerlink" title="Google原生全家桶"></a>Google原生全家桶</h1><p>一个周末的时间，连续12H+12H的时间，应该等体验一遍下面几十个应用了,挺多的，先把<a href="https://play.google.com/store/search?q=Google&amp;c=apps" target="_blank" rel="external">Google play</a>的链接Mark一下先。先不说应用内部，就从这icon就可以看出满满快要溢出屏幕的Google的感觉，就是内味了（material design）。要是体验之后，还可以去油管（YouTube）搜索相关产品视频，看下这些产品设计决策背后的一系列的逻辑，学习他们思考的过程和决策的原因，或许会给自己有一些灵感。这图有点长，但是还是想贴上来感受下内味……</p>
+<img src="/myblog/2020/03/26/Google%20Material%20Design/Google-app.png" alt="Google-app.png" title="">
+<h1 id="Material-Design-Basics"><a href="#Material-Design-Basics" class="headerlink" title="Material Design Basics"></a>Material Design Basics</h1><p>关于质感设计，官方是这样介绍的，如下：</p>
+<blockquote>
+<p>Material Design is a visual language that synthesizes the classic principles of good design with the innovation of technology and science.</p>
+</blockquote>
+<h2 id="MD核心的几个Principles"><a href="#MD核心的几个Principles" class="headerlink" title="MD核心的几个Principles"></a>MD核心的几个Principles</h2><h3 id="Material-is-the-metaphor"><a href="#Material-is-the-metaphor" class="headerlink" title="Material is the metaphor"></a>Material is the metaphor</h3><blockquote>
+<p>Material Design is inspired by the physical world and its textures, including how they reflect light and cast shadows. Material surfaces reimagine the mediums of paper and ink.</p>
+</blockquote>
+<p>大概的意思就是:艺术源于生活，又要高于生活，但是又不能脱离生活。<br>有点像我们初高中学的唐诗宋词，是不是有一个类似拟物或者拟人的概念？姑且就叫它拟物吧</p>
+<h3 id="Bold-graphic-intentional"><a href="#Bold-graphic-intentional" class="headerlink" title="Bold, graphic, intentional"></a>Bold, graphic, intentional</h3><blockquote>
+<p>Material Design is guided by print design methods — typography, grids, space, scale, color, and imagery — to create hierarchy, meaning, and focus that immerse viewers in the experience.</p>
+</blockquote>
+<p>大概的意思就是：字体、版式，网格，空间，比例，颜色和图像等不仅仅是直观的界面展示，还要是简单且有意义的表达清楚所传达的信息架构、内容意义，最关键的是能帮助用户聚焦，说人话就是很容易自在的沉浸其中。太难了啊哈哈哈哈哈</p>
+<h3 id="Motion-provides-meaning"><a href="#Motion-provides-meaning" class="headerlink" title="Motion provides meaning"></a>Motion provides meaning</h3><blockquote>
+<p>Motion focuses attention and maintains continuity, through subtle feedback and coherent transitions. As elements appear on screen, they transform and reorganize the environment, with interactions generating new transformations.</p>
+</blockquote>
+<p>大概的意思就是：有意义的动效，一定是有意义有逻辑的。通过动效微妙的反馈和连贯的过渡来吸引注意力并保持连续性。当元素出现在屏幕上时，它们将转换并重新组织环境，而交互会产生新的转换。说人话就是追求自然流畅的交互动效，完整极致的用户体验。这也很难啊哈哈哈哈，精髓。我在官方的油管视频中看到那些弧形动效的逻辑，确实是有这么点逻辑和感觉。</p>
+<p>关于动画效果这块，官方还有四个小玩意要说明的。</p>
+<ul>
+<li><p>Authentic Motion<br>动效的价值容易理解。不是要酷酷炫炫的，是要看到物体的移动就容易懂得怎么去使用它，并能了解它的各种形态，能给用户体验带来真实价值。</p>
+</li>
+<li><p>Responsive Interaction<br>动效是有逻辑的，用户会开心。动效不应该是随机发生、没有意义的。</p>
+</li>
+<li><p>Meaningful Transitions<br>有意义的动效，带领用户的注意力去理解流程。比如滑块，滑块有弹性但是不能滑走，用户就明白这个状态下是不能滑动的。如果没有弹性，用户可能以为死机了或者卡了，这样体验就不是很好。</p>
+</li>
+<li><p>Delightful Details<br>动效细节可以让用户惊喜。小细节也有小惊喜。</p>
+</li>
+</ul>
+<h3 id="Flexible-foundation"><a href="#Flexible-foundation" class="headerlink" title="Flexible foundation"></a>Flexible foundation</h3><blockquote>
+<p>The Material Design system is designed to enable brand expression. It’s integrated with a custom code base that allows the seamless implementation of components, plug-ins, and design elements.</p>
+</blockquote>
+<p>大概的意思就是说，要有挺强的延续性和可扩展性。MD设计系统旨在实现品牌表达，它与自定义代码库集成在一起，可以无缝实现组件，插件和设计元素。所以就有很多可以资源库和插件库，有很多开发者、设计师支持，形成一个派系这种感觉。比如<a href="https://flutter.dev/" target="_blank" rel="external">Flutter是谷歌的移动UI框架</a><br><img src="/myblog/2020/03/26/Google%20Material%20Design/flutter.png" alt="flutter.png" title=""></p>
+<h3 id="Cross-platform"><a href="#Cross-platform" class="headerlink" title="Cross-platform"></a>Cross-platform</h3><blockquote>
+<p>Material Design maintains the same UI across platforms, using shared components across Android, iOS, Flutter, and the web.<br>大概的意思就是说：跨平台性，一次开发，多平台适配。这样能降低设计成本，降低开发成本，在跨平台上也能提供统一的原滋原味的流畅体验。这确实是一个大的方向，形成一个生态，现在这么多设备，手机、pc、pad、手表、汽车、家庭娱乐等等，万物互联的时代体验也要万物互联。说到这个，越来越多的厂商开始做跨设备了，Apple、Microsoft、Google、华为、小米等，都在建立自己的生态。所以跨平台是必要考虑因素。</p>
+</blockquote>
+<h1 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h1><p>关于goals，官方如是说：</p>
+<ul>
+<li><p>Create</p>
+<blockquote>
+<p>Create a visual language that synthesizes the classic principles of good design with the innovation and possibility of technology and science.<br>将优秀设计的经典原理与技术科学的创新尽可能性相结合，创建一种新的视觉语言。</p>
+</blockquote>
+</li>
+<li><p>Unify</p>
+<blockquote>
+<p>Develop a single underlying system that unifies the user experience across platforms, devices, and input methods.<br>以统一跨平台，设备和输入理念的用户体验，开发一个基础系统。</p>
+</blockquote>
+</li>
+<li><p>Customize</p>
+<blockquote>
+<p>Expand Material’s visual language and provide a flexible foundation for innovation and brand expression.<br>扩展Material的视觉语言，并为创新和品牌表达提供灵活的基础。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>借大学老师卫博士的一句话总结：<blockquote>
+<p>要做对人类有长远意义的事，这才叫使命。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1><p>粗浅了解一下，这些文档和视频后面等花不少时间和精力去慢慢研究，先存下来先。</p>
+<p>官方的链接，官方的就是精髓，万变不离其中，存档。<br>1.<a href="https://developer.android.com/design" target="_blank" rel="external">Android开发者官网-设计和质量</a><br>2.<a href="https://material.io/" target="_blank" rel="external">Google Material Design Guidance and Code</a><br>3.<a href="https://www.youtube.com/channel/UClKO7be7O9cUGL94PHnAeOA" target="_blank" rel="external">Google Design - YouTube视频合集</a></p>
+<p>后面估计还会去看看Apple与Microsoft等的规范，看看有何不可不同之处。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/myblog/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/WechatPay.jpg',
+  alipayImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/AliPay.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/杂谈/">杂谈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/质感设计/">质感设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/myblog/2020/03/10/见证历史的黑色星期一/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">见证历史的黑色星期一</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Google原生全家桶"><span class="nav-number">1.</span> <span class="nav-text">Google原生全家桶</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Material-Design-Basics"><span class="nav-number">2.</span> <span class="nav-text">Material Design Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MD核心的几个Principles"><span class="nav-number">2.1.</span> <span class="nav-text">MD核心的几个Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Material-is-the-metaphor"><span class="nav-number">2.1.1.</span> <span class="nav-text">Material is the metaphor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bold-graphic-intentional"><span class="nav-number">2.1.2.</span> <span class="nav-text">Bold, graphic, intentional</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motion-provides-meaning"><span class="nav-number">2.1.3.</span> <span class="nav-text">Motion provides meaning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flexible-foundation"><span class="nav-number">2.1.4.</span> <span class="nav-text">Flexible foundation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-platform"><span class="nav-number">2.1.5.</span> <span class="nav-text">Cross-platform</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Goals"><span class="nav-number">3.</span> <span class="nav-text">Goals</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#End"><span class="nav-number">4.</span> <span class="nav-text">End</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 卖假货的学长 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/myblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/myblog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/myblog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/myblog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/myblog/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/myblog/fancybox/jquery.fancybox.css">
+  <script src="/myblog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/myblog/js/scripts.js"></script>
+
+
+
+
+  <script src="/myblog/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            卖假货的学长
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 LiangTianhua All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+</body>
+</html>
