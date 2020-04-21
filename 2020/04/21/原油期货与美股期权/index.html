@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>原油期货与美股期权 | 卖假货的学长</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="石油美股期货期权" />
+  
+  
+  
+  
+  <meta name="description" content="今天早上起来又看到大新闻了，周二早间美国原油WTI出现诡异暴跌，美原油5月期货合约跌至负值，收盘最低触及-40.32美元/桶，这是自1946年二战结束美国历史上有原油交易数据以来最没底线的一次触底，5月美油期货结算价为-37.63美元/桶，下跌55.9美元/桶；跌幅高达305.97%，巴菲特都没见过的三、四月份。上周末我研究了一下美股的期权，正好今天这个原油的大新闻，一起写下来记录一下。">
+<meta name="keywords" content="石油,美股,期货,期权">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原油期货与美股期权">
+<meta property="og:url" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/index.html">
+<meta property="og:site_name" content="卖假货的学长">
+<meta property="og:description" content="今天早上起来又看到大新闻了，周二早间美国原油WTI出现诡异暴跌，美原油5月期货合约跌至负值，收盘最低触及-40.32美元/桶，这是自1946年二战结束美国历史上有原油交易数据以来最没底线的一次触底，5月美油期货结算价为-37.63美元/桶，下跌55.9美元/桶；跌幅高达305.97%，巴菲特都没见过的三、四月份。上周末我研究了一下美股的期权，正好今天这个原油的大新闻，一起写下来记录一下。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/oil.jpg">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/CL2005.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/1.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/期权.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/合约内容.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/fxsy.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/2.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/iv.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/3.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/闹大了.png">
+<meta property="og:updated_time" content="2020-04-21T09:43:45.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原油期货与美股期权">
+<meta name="twitter:description" content="今天早上起来又看到大新闻了，周二早间美国原油WTI出现诡异暴跌，美原油5月期货合约跌至负值，收盘最低触及-40.32美元/桶，这是自1946年二战结束美国历史上有原油交易数据以来最没底线的一次触底，5月美油期货结算价为-37.63美元/桶，下跌55.9美元/桶；跌幅高达305.97%，巴菲特都没见过的三、四月份。上周末我研究了一下美股的期权，正好今天这个原油的大新闻，一起写下来记录一下。">
+<meta name="twitter:image" content="http://www.liantianhua.com/myblog/2020/04/21/原油期货与美股期权/oil.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="卖假货的学长" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/myblog/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/myblog/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/myblog/css/style.css">
+
+  <script src="/myblog/js/jquery-3.1.1.min.js"></script>
+  <script src="/myblog/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/myblog/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/myblog/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/myblog/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/myblog/css/vdonate.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/myblog/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/myblog/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/myblog/',
+        CONTENT_URL: '/myblog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/myblog/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-原油期货与美股期权" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      原油期货与美股期权
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/myblog/2020/04/21/原油期货与美股期权/" class="article-date">
+	  <time datetime="2020-04-21T08:01:45.000Z" itemprop="datePublished">2020-04-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/myblog/categories/期货与期权/">期货与期权</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天早上起来又看到大新闻了，周二早间美国原油WTI出现诡异暴跌，美原油5月期货合约跌至负值，收盘最低触及-40.32美元/桶，这是自1946年二战结束美国历史上有原油交易数据以来最没底线的一次触底，5月美油期货结算价为-37.63美元/桶，下跌55.9美元/桶；跌幅高达305.97%，巴菲特都没见过的三、四月份。上周末我研究了一下美股的期权，正好今天这个原油的大新闻，一起写下来记录一下。<br><img src="/myblog/2020/04/21/原油期货与美股期权/oil.jpg" alt="oil.jpg" title=""></p>
+<a id="more"></a>
+<h1 id="西德州轻质原油期货-WTI2005暴跌"><a href="#西德州轻质原油期货-WTI2005暴跌" class="headerlink" title="西德州轻质原油期货-WTI2005暴跌"></a>西德州轻质原油期货-WTI2005暴跌</h1><p>石油期货就是以远期石油价格为标的物品的期货，是期货交易中的一个交易品种。由期货交易所统一制定，以原油为标的的标准化合约，其中很出名的有美油和布油。<br>基于WTI原油报价,合约标志:CL,期货场所:纽约商品交易所（NYMEX）。<br><img src="/myblog/2020/04/21/原油期货与美股期权/CL2005.png" alt="CL2005.png" title=""></p>
+<h2 id="为什么会出现周一的暴跌？"><a href="#为什么会出现周一的暴跌？" class="headerlink" title="为什么会出现周一的暴跌？"></a>为什么会出现周一的暴跌？</h2><p>1.首先要知道的一个概念是“近期期货”，比如说5月的WTI期货。和“远期期货”，比如说6月的WTI期货。通常来说，期货价格要高于现货价格，远期期货价格要高于近期期货价格，因为期货市场存在持仓费用，也就是时间价值的体现，美股期权里也存在时间价值，能让期权合约价值归零的时间价值。</p>
+<p>2.很多交易员买原油期货并不想真正的买到原油，只有炼油厂还有航空公司等实体企业会有真正需求，而华尔街只是想从差价中获利而已。正常情况下，一个月前后的近期和远期原油期货的价差在40-50美分左右。因此，如果一个合同到期而交易员们想持续做多油价，那么通常的做法是“移仓”，也就是卖掉近期期货同时买入远期期货，持续看多。转期升水损耗这个问题，在美股的石油基金中也存在，特别是短期的美国原油基金USO以及类似的UCO等，这些一般来说适合短期投机不适合长期持有。USL的话是近12个月的，这个升水损耗没这么严重。</p>
+<p>3.没地方存放了，目前市场对5月的原油价格非常悲观，但认为6月会反弹，于是我们看到5月WTI的价格重挫，但6月WTI的价格仍然还在20美元每桶附近交易。这就将交易员们逼到了一个死胡同：如果不移仓，每手1000桶的原油实物必须要找地方储存。且不说现在全球存储空间快到达极限，就算可以找到地方储存，费用也会高到非常不划算。那如果移仓到6月的期货呢，现在6月期货价格在20美元之上，而5月期货价格在负值，这样创下历史新高的价差导致的亏损使得没人会去移仓。那怎么办呢，随着交割日期只剩一天，留给华尔街的似乎就只有一条路了：卖！无论是什么价格，都要平仓。因此我们看到WTI油价的迅速断崖式地跳水下挫，不断刷新历史新低纪录。</p>
+<h1 id="美股期权-Options"><a href="#美股期权-Options" class="headerlink" title="美股期权(Options)"></a>美股期权(Options)</h1><img src="/myblog/2020/04/21/原油期货与美股期权/1.png" alt="1.png" title="">
+<p>股票期权是一种金融衍生产品，赋予投资者在约定的日期前以约定的价格买卖指定股票的权利。(权利并非义务，期权在行权日之前也可以进行期权合约买卖交易，如果不交易又不行权，则损失权益金。)主要分为美式期权和欧式期权，这玩意本来是用来做保险的，后来更多的人把它当作一种巨大杠杆的投机工具，就是那种要么0要百分之几百，投机性极强。这玩意几本书估计都说不完，挺复杂的，整理思路的时候我都是用Xmind去画思维导图整理的。实践一下如果亏损，那就是实打实的交学费了啊哈哈哈哈。<br>要素1-到期日：</p>
+<blockquote>
+<p>每个期权合约都有一个设定的到期日。 这个日期很大程度上取决于合约本身的价值，因为它设定了您可以选择买入、卖出或行权的时间范围。 一旦期权合约到期，合约本身的价值就将归零。</p>
+</blockquote>
+<p>要素2-行权价：</p>
+<blockquote>
+<p>期权合约的行权价是期权约定期权买方有权利以该价格从期权卖方买入或卖出给期权卖方相应股票。</p>
+</blockquote>
+<p>要素3-权益金：</p>
+<blockquote>
+<p>作为买入方，您可以将权益金视为购买期权的价格。 如果您在到期前买入或卖出期权，则权益金就是它交易的价格。您可以像交易股票一样在市场上交易期权。权益金并非设定，因为期权合约价值和对应股票相关联：标的股票的价值，标的股票的波动性以及到期前剩余的时间都会影响期权的权益金。</p>
+</blockquote>
+<p>其中，call是看涨期权（合约名称会带C），put是看跌期权（合约名称会带P），两种期权又分别对应了long和short的两种操作，即买入和卖出两种操作。然后这四个因素加起来，可以组合好多操作策略。</p>
+<img src="/myblog/2020/04/21/原油期货与美股期权/期权.png" alt="期权.png" title="">
+<p>大部分的美股除了有正股之外，还有期权。<a href="https://finance.yahoo.com/" target="_blank" rel="external">雅虎财经</a>主要是看下面的合约内容，圈起来的，很重要的信息,涉及到call还是put,执行价格，到期日，ask等等等</p>
+<img src="/myblog/2020/04/21/原油期货与美股期权/合约内容.png" alt="合约内容.png" title="">
+<h2 id="希腊字母表"><a href="#希腊字母表" class="headerlink" title="希腊字母表"></a>希腊字母表</h2><p>那天下午尝试去找一个来模拟并可视化，折腾了一会发现数学知识不够用了，后面再找个时间专门手撕一下，这玩意要理解熟悉起来估计要花不少时间，大概的内容跟下面的息息相关。<br><img src="/myblog/2020/04/21/原油期货与美股期权/fxsy.png" alt="fxsy.png" title=""><br><img src="/myblog/2020/04/21/原油期货与美股期权/2.png" alt="2.png" title=""><br><img src="/myblog/2020/04/21/原油期货与美股期权/iv.png" alt="iv.png" title=""><br><img src="/myblog/2020/04/21/原油期货与美股期权/3.png" alt="3.png" title=""></p>
+<h1 id="三月的深圳房价"><a href="#三月的深圳房价" class="headerlink" title="三月的深圳房价"></a>三月的深圳房价</h1><p>前几天看到好多朋友圈发深圳3月火爆的房价，还有什么深圳在做空自己的之类的文章，好奇背后的逻辑，就自己想，然后去查，去翻到了几条比较有意思的，整理如下：</p>
+<p>1.短期深圳西部3月这波行情，有人提出这样的逻辑。<br>源于这个《深圳市应对新型冠状病毒肺炎疫情中小微企业贷款贴息项目实施办法》文件。<br>通过企业房产抵押的方式，企业可以获得国家50%+深圳50%（大概就是很低很低的利息）贴息贷款，补贴6个月。具体的做法是，企业主全款买套房，再通过企业过账抵押的形式，就可以无息贷出相当于房子估值的7成金额（新增贷款可以享受政府贴息）。这个政策以企业为主体，但必须以房产为抵押，所以好多企业主都去买房子。房子到手，贷款也到手，到手的贷款可能拿去经营企业了，也有可能继续留回楼市，同时也参杂着一些游走在边缘的行为。具体到底有没有这个，可以问问银行信贷的同学。<br>结果，晚上好像真出事了。震惊<br><img src="/myblog/2020/04/21/原油期货与美股期权/闹大了.png" alt="闹大了.png" title=""></p>
+<p>2.长期的，有人提出了这样的逻辑。<br>从政府的角度来讲，首先严控土地，放宽购房政策，做高土地和房地产价格，再层层加杠杆把房地产证券化，从而做高整个城市的金融价值。然后利用市场制造暂时可控的高价值，通过再抵押为实体投资、贸易融资、科技创投提供了资金便利，从而达到产业升级，然后把杠杆加到可控的极致，让整个市场狂欢化。然后就有了张五常说的：深圳将超过上海和硅谷，成为整个地球的经济中心。通过深圳的高估值，再去撬动带高周边城市的金融价值。</p>
+<p>3.影响的可能还有货币供应的三兄弟——M0、M1、M2，降准降息印钞放水。至于这些大佬为啥瞄准深圳，可能是深圳确实有过人的魅力，得天独厚的条件。也有可能是不流动起来的钱不算热钱，热钱毫无疑问是去热闹的地方，所以首选龙头标的-宇宙中心深圳啊哈哈哈哈。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/myblog/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/WechatPay.jpg',
+  alipayImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/AliPay.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/期权/">期权</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/期货/">期货</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/石油/">石油</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/美股/">美股</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/myblog/2020/03/26/Google Material Design/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Google Material Design</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#西德州轻质原油期货-WTI2005暴跌"><span class="nav-number">1.</span> <span class="nav-text">西德州轻质原油期货-WTI2005暴跌</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么会出现周一的暴跌？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么会出现周一的暴跌？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美股期权-Options"><span class="nav-number">2.</span> <span class="nav-text">美股期权(Options)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#希腊字母表"><span class="nav-number">2.1.</span> <span class="nav-text">希腊字母表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三月的深圳房价"><span class="nav-number">3.</span> <span class="nav-text">三月的深圳房价</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 卖假货的学长 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/myblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/myblog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/myblog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/myblog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/myblog/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/myblog/fancybox/jquery.fancybox.css">
+  <script src="/myblog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/myblog/js/scripts.js"></script>
+
+
+
+
+  <script src="/myblog/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            卖假货的学长
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 LiangTianhua All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+</body>
+</html>
