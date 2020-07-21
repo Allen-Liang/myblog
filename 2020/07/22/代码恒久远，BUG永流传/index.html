@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>代码恒久远，bug永流传 | 卖假货的学长</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="北极小破站代码" />
+  
+  
+  
+  
+  <meta name="description" content="北极冻土里的代码，是 GitHub 的终极浪漫。   我的小破站似乎也有幸被带到北极封存1000年……">
+<meta name="keywords" content="北极,小破站,代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码恒久远，BUG永流传">
+<meta property="og:url" content="http://www.liantianhua.com/myblog/2020/07/22/代码恒久远，BUG永流传/index.html">
+<meta property="og:site_name" content="卖假货的学长">
+<meta property="og:description" content="北极冻土里的代码，是 GitHub 的终极浪漫。   我的小破站似乎也有幸被带到北极封存1000年……">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/07/22/代码恒久远，BUG永流传/小破站.png">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/07/22/代码恒久远，BUG永流传/Svalbard废弃矿井.jpeg">
+<meta property="og:image" content="http://www.liantianhua.com/myblog/2020/07/22/代码恒久远，BUG永流传/储存开源代码所用的胶片.jpeg">
+<meta property="og:updated_time" content="2020-07-21T16:34:06.547Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码恒久远，BUG永流传">
+<meta name="twitter:description" content="北极冻土里的代码，是 GitHub 的终极浪漫。   我的小破站似乎也有幸被带到北极封存1000年……">
+<meta name="twitter:image" content="http://www.liantianhua.com/myblog/2020/07/22/代码恒久远，BUG永流传/小破站.png">
+  
+    <link rel="alternate" href="/atom.xml" title="卖假货的学长" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/myblog/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/myblog/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/myblog/css/style.css">
+
+  <script src="/myblog/js/jquery-3.1.1.min.js"></script>
+  <script src="/myblog/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/myblog/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/myblog/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/myblog/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/myblog/css/vdonate.css" ><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/myblog/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/myblog/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myblog/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/myblog/',
+        CONTENT_URL: '/myblog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/myblog/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-代码恒久远，BUG永流传" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      代码恒久远，BUG永流传
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/myblog/2020/07/22/代码恒久远，BUG永流传/" class="article-date">
+	  <time datetime="2020-07-21T16:00:12.000Z" itemprop="datePublished">2020-07-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/myblog/categories/GIthub/">GIthub</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><center> 北极冻土里的代码，是 GitHub 的终极浪漫。</center> </p>
+<p><center> 我的小破站似乎也有幸被带到北极封存1000年……</center><br><img src="/myblog/2020/07/22/代码恒久远，BUG永流传/小破站.png" alt="小破站.png" title=""></p>
+<a id="more"></a>
+<p>在常年冰封的 Svalbard——斯瓦尔巴群岛，坐落着世界上最北端的小镇。这里气候极寒，数千只北极熊与三千人类居民共生。受国际斯瓦尔巴条约的监管，它是地球上最偏远，也是地缘政治最稳定的人类居住地之一。 在 GitHub 的一项异常浪漫的人类计划里，Svalbard 被选作存放现代人类文明火种的最佳位置。7月8日，GitHub将支撑当今社会运转的几乎所有开源代码，以胶片的形式储存，打包运往Svalbard。目前，这些胶片已经被放置在钢制容器内，密封在一个废弃煤矿中。在这个极其干燥的、-5°C恒温的矿井中，这些代码至多可以保存一千年。<br>这是身处2020年的人类，留给未来历史学家们的礼物。在官方声明中，GitHub写到，「未来的历史学家将能够从开源项目和元数据中了解我们，他们可能会认为我们这个开源的、志愿的、遵循摩尔定律的时代具有历史意义。」 </p>
+<img src="/myblog/2020/07/22/代码恒久远，BUG永流传/Svalbard废弃矿井.jpeg" alt="Svalbard废弃矿井.jpeg" title="">
+<p>虽然 Svalbard 会受到气候变化的影响，但在可预见的未来，受到影响的大概率只是最外层几米的永久冻土，气候变暖不会威胁矿井的稳定。因此，这个矿井也成为保存人类文明的重要基地。<br>AWA（Arctic World Archive，世界数据档案馆）就在这里，除 GitHub 的代码外，AWA 已经保存了来自意大利、巴西、挪威、梵蒂冈和许多其他国家的历史和文化数据。著名的「全球种子库」也位于此，距离 GitHub 选择的矿井仅一英里远，那里保存了世界上几乎所有农作物的种子。<br><img src="/myblog/2020/07/22/代码恒久远，BUG永流传/储存开源代码所用的胶片.jpeg" alt="储存开源代码所用的胶片.jpeg" title=""><br>或许是静待末日重启，又或者是在平安顺遂的数百年后等待历史学家考古。被冰封在 Svalbard 的人类文明，无论是种子还是代码，对于未来的人类来说，都承载着像如今马丘比丘和吴哥窟一样的历史意义。计算机世界疯狂迭代，被迭代掉的代码往往惨遭丢弃，或者被放进不足够稳定的存储介质中。毫不危言耸听，若不采取行动，当下社会中的数字资料，在未来几代人的时间周期内，将会消失殆尽。GitHub 的初心来源于此。硬盘、磁带、CD、SSD，这些介质在「保存人类文明」这件事面前，都显得不足够稳定。地理位置也是考虑因素之一，战争也好，自然灾害也罢，天灾人祸时有发生。作为当下数字社会运转的基石，如何让开源代码长期、安全地被保存下来，是 GitHub 想要成就的事。 </p>
+<p>详情见：<a href="https://github.blog/2020-07-16-github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/" target="_blank" rel="external">https://github.blog/2020-07-16-github-archive-program-the-journey-of-the-worlds-open-source-code-to-the-arctic/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/myblog/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: '打赏支持', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/WechatPay.jpg',
+  alipayImage: 'https://github.com/Allen-Liang/myblog/raw/master/about/donate/images/AliPay.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/代码/">代码</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/北极/">北极</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myblog/tags/小破站/">小破站</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/myblog/2020/06/30/雅各布·尼尔森《界面设计的十大经验法则》/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">雅各布·尼尔森《界面设计的十大经验法则》</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav">无</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 卖假货的学长 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/myblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/myblog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/myblog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/myblog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/myblog/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/myblog/fancybox/jquery.fancybox.css">
+  <script src="/myblog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/myblog/js/scripts.js"></script>
+
+
+
+
+  <script src="/myblog/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            卖假货的学长
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 LiangTianhua All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+</body>
+</html>
